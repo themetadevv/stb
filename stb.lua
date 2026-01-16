@@ -7,10 +7,23 @@ project "stb"
   targetdir ("bin/builds/%{cfg.system}/%{cfg.buildcfg}")
   objdir ("bin/intermediates/%{cfg.system}/%{cfg.buildcfg}")
 
-   files {
+  files {
      "%{prj.location}/**.lua",
      "%{prj.location}/stb_image.h",
      "%{prj.location}/stb_image.cpp",
      "%{prj.location}/stb_image_write.h",
      "%{prj.location}/stb_image_write.cpp",
    }
+
+  filter "system:windows"
+		systemversion "latest"
+
+  filter "configurations:Debug"
+		runtime "Debug"
+		symbols "on"
+		optimize "off"
+
+	filter "configurations:Release"
+		 runtime "Release"
+		 symbols "off"
+		 optimize "on"
