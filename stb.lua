@@ -2,7 +2,7 @@ project "stb"
   kind "StaticLib"
   language "C++"
   cppdialect "C++20"
-  staticruntime "off
+  staticruntime "off"
 
   targetdir ("bin/builds/%{cfg.system}/%{cfg.buildcfg}")
   objdir ("bin/intermediates/%{cfg.system}/%{cfg.buildcfg}")
